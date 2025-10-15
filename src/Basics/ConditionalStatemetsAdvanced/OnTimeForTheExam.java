@@ -21,26 +21,20 @@ public class OnTimeForTheExam {
                     System.out.println("Early");
                     if(examTime-arrivalTime <60){
                         System.out.printf("%d minutes before the start",examTime-arrivalTime);
-                    }else{
-                        if(examTime-arrivalTime >=60 && examTime-arrivalTime%60>=10) {
-                            System.out.printf("%d:%d hours before the start",((examTime-arrivalTime)/60),((examTime-arrivalTime)%60));
-                        }else{
-                            System.out.printf("%d:0%d hours before the start",((examTime-arrivalTime)/60),((examTime-arrivalTime)%60));
-                        }
+                    }else {
+                        System.out.printf("%d:%02d hours before the start", ((examTime-arrivalTime)/60),((examTime-arrivalTime)%60));
                     }
                 }
             }else {
                 System.out.println("Late");
                 if(arrivalTime-examTime < 60){
-                    System.out.printf("%d minutes before the start",arrivalTime-examTime);
+                    System.out.printf("%d minutes after the start",arrivalTime-examTime);
                 }else{
-                    if(arrivalTime-examTime >=60 && arrivalTime-examTime%60>=10) {
-                        System.out.printf("%d:%d hours before the start",((arrivalTime-examTime)/60),((arrivalTime-examTime)%60));
-                    }else{
-                        System.out.printf("%d:0%d hours before the start",((arrivalTime-examTime)/60),((arrivalTime-examTime)%60));
-                    }
+                    System.out.printf("%d:%02d hours after the start", ((arrivalTime-examTime)/60),((arrivalTime-examTime)%60));
                 }
             }
+        }else{
+            System.out.println("On time");
         }
     }
 }
